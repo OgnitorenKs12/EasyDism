@@ -694,7 +694,7 @@ Call :Upper Value !Value!
 					  Call :Dil A 2 D0016&set /p Value2=►%R%[32m !LA2!: %R%[0m
 					      if !Value2! GTR 4 (set Value2=4)
 					  dir /b "%Konum%\Bin\SetupFiles.zip" > NUL 2>&1
-					      if !errorlevel! NEQ 0 (set Link=https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/Files/SetupFiles.zip
+					      if !errorlevel! NEQ 0 (set Link=https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/Files/SetupFiles.zip
 					                             Call :PSDownload "%Konum%\Bin\SetupFiles.zip"
 						                        )
 					  %NSudo% Powershell -command "Expand-Archive -Force '%Konum%\Bin\SetupFiles.zip' '%Mount%'"
@@ -735,7 +735,7 @@ set Error_Control=
 echo.&Call :Dil A 2 D0014&set /p Value=►%R%[32m !LA2!%R%[90m [%R%[96m Y %R%[90m/%R%[96m N %R%[90m]: %R%[0m
 Call :Upper Value !Value!
 	if !Value! EQU Y (dir /b "%Konum%\Bin\VMD.zip" > NUL 2>&1
-					      if !errorlevel! NEQ 0 (set Link=https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/Files/VMD.zip
+					      if !errorlevel! NEQ 0 (set Link=https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/Files/VMD.zip
 						                         Call :PSDownload "%Konum%\Bin\VMD.zip"
 						                        )
 					  Call :Powershell "Expand-Archive -Force '%Konum%\Bin\VMD.zip' '%Konum%\Bin\VMD'"
