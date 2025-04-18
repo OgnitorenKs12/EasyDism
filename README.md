@@ -1,4 +1,4 @@
-![Repo1](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/Repo-SS/Title.png)
+![Repo1](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/Repo-SS/Title.png)
 
 #### Prepared by: Hüseyin UZUNYAYLA / OgnitorenKs
 - ► Mail: ognitorenks@gmail.com
@@ -10,8 +10,8 @@ All rights of the work belong to Hüseyin UZUNYAYLA. It is forbidden to develop,
 
 # EASYDISM
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/0.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/6.4.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/0.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/6.4.png)
 
 - EasyDism works on x64 architectures of Windows 10 - 11 versions.
 - Windows screen scaling setting may break Toolbox's window setting.
@@ -20,56 +20,56 @@ All rights of the work belong to Hüseyin UZUNYAYLA. It is forbidden to develop,
 
 In this section you can view the contents of 'install.wim', 'instal.esd' and 'boot.wim'.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/1.1.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/1.2.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/1.1.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/1.2.png)
 
 </details><details><B><summary> 2 - WIM ► Convert ESD</B></summary>
 
 - You can convert install.wim to install.esd. 
 - Esd conversion will compress install.wim considerably and reduce its size.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/2.1.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/2.2.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/2.3.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/2.1.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/2.2.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/2.3.png)
 
 </details><details><B><summary> 3 - ESD ► Convert WIM</B></summary>
 
 - You can convert install.esd to install.wim.
 - To reprocess install.esd files, they must first be converted to install.wim.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/3.1.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/3.2.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/3.3.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/3.1.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/3.2.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/3.3.png)
 
 </details><details><B><summary> 4 - Extract index</B></summary>
 
 You can also use this section as an index eraser. Because the index deletion does not clean the junk files in install.wim, the size will not decrease. However, the 'index extractor' will not include junk files in the newly created install file, so if you have edited it before, the size will decrease.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/4.1.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/4.2.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/4.3.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/4.1.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/4.2.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/4.3.png)
 
 If you have already extracted in this section and you forgot to get your files from the EasyDism folder, it offers an option for new operations. In other words, if there is an install.wim/esd file in the Output folder, it will warn you according to your extraction process.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/4.4.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/4.5.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/4.4.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/4.5.png)
 
 </details><details><B><summary> 5 - Prepare All-in-one Windows [AIO]</B></summary>
 
 It allows you to combine different versions of Windows into a single ISO. In other words, it allows you to create a single install.wim file with Windows 10 and Windows 11 versions together.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/5.1.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/5.2.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/5.3.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/5.1.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/5.2.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/5.3.png)
 
 </details><details><B><summary> 6 - Mount Image [Mount]</B></summary>
 
 Allows you to extract the image file to the directory. You cannot extract more than one image. Once the image is defined, it writes information about its contents to the main menu.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/6.1.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/6.2.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/6.3.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/6.4.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/6.1.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/6.2.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/6.3.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/6.4.png)
 
 </details><details><B><summary> 7 - Install driver</B></summary>
 
@@ -97,16 +97,16 @@ It collects the mounted system and turns it into install.wim. After you make edi
 
 - After the collection process, the image information in the main menu will be removed.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/10.1.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/10.2.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/10.3.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/10.1.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/10.2.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/10.3.png)
 
 </details><details><B><summary> 12 - Prepare ISO</B></summary>
 
 It allows you to prepare a suitable ISO for UEFI and Legacy BIOS installation. After the ISO is prepared, the folder where it was created will open. If there is an ISO with the same name that you have forgotten in your previous operations, it will warn you beforehand.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/11.1.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/11.2.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/11.1.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/11.2.png)
 
 </details><details><B><summary> 13 - Windows Setup düzenle</B></summary>
 
@@ -121,13 +121,13 @@ In this section, the “Windows Setup” section in the boot.wim file is edited.
 
 In this section, if you have an image that you have previously mounted, you can select and define it and then you can operate on EasyDism. After the definition, the main menu will display information about the image.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/10.1.png)
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/6.4.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/10.1.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/6.4.png)
 
 </details><details><B><summary> 15 - EasyDism change language</B></summary>
 
 At startup, the default system language is automatically selected. You can use this section if you want to change it.
 
-![Tool0](https://raw.githubusercontent.com/OgnitorenKs/EasyDism/main/.github/EN-SS/15.png)
+![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/15.png)
 
 </details>
