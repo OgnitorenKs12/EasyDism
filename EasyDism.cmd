@@ -19,7 +19,7 @@
 :OgnitorenKs.Builder
 echo off
 chcp 65001 > NUL 2>&1
-title  EasyDism 4.2 │ OgnitorenKs
+title  EasyDism 4.3 │ OgnitorenKs
 setlocal enabledelayedexpansion
 cls
 
@@ -65,6 +65,7 @@ Call :Error_Character "%Konum%"
     if %Error% EQU 2 (Call :Dil A 2 Y0001&echo.&echo %R%[32m !LA2! %R%[0m&Call :Timeout 3&exit)
     
 REM -------------------------------------------------------------
+REM Lazım olan klasörleri oluşturur
 FOR %%a in (Regedit Output Driver Boot Update Bin\Logs .Script-AfterSetup .Desktop-AfterSetup) do (
     MD "%Konum%\%%a" > NUL 2>&1
 )
