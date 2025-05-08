@@ -78,15 +78,15 @@ FOR /F "delims=':' tokens=3" %%a in ('Find "Mount Dir" %Konum%\Bin\Logs\MountInf
     FOR /F "skip=2 delims=':' tokens=2" %%b in ('Find "Mount Dir" %Konum%\Bin\Logs\MountInfo.txt 2^>NUL') do (
         echo %%b | Findstr /i "?" > NUL 2>&1
             if !errorlevel! EQU 0 (FOR /F "delims='\\?\' tokens=2" %%c in ('echo %%b ^>NUL') do (
-			                           set C=%%c
-			                           set C=!C:~1!
-			                           Dism /Remount-Image /MountDir:"!C!:%%a" > NUL 2>&1
-									  )
-								  )
+                                       set C=%%c
+                                       set C=!C:~1!
+                                       Dism /Remount-Image /MountDir:"!C!:%%a" > NUL 2>&1
+                                      )
+                                  )
             if !errorlevel! NEQ 0 (set B=%%b
                                    set B=!B:~1!
                                    Dism /Remount-Image /MountDir:"!B!:%%a" > NUL 2>&1
-								  )
+                                  )
     )
 )
 
@@ -99,7 +99,7 @@ Call :Mount_Check
 if "!Mount_Road!" EQU "GO" (mode con cols=130 lines=30
                             REM Call :Dil A 2 Prepared_By_&Call :Dil B 3 Prepared_By_&echo %R%[90m !LB3!:%R%[96m  !LA2! %R%[0m
                             Call :Menu_Reader
-			               )
+                           )
 echo.
 Call :Dil A 2 Y0020&echo %R%[91m► EasyDism !LA2! %R%[0m
 echo.
@@ -108,18 +108,18 @@ FOR /L %%a in (1,1,15) do (
     Call :Dil A 2 Menu_%%a_
     set /a Count+=1
     if %%a LSS 10 (set Count= !Count!)
-	if %%a EQU 1 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-	if %%a EQU 2 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-	if %%a EQU 3 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-	if %%a EQU 4 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-	if %%a EQU 5 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-	if %%a EQU 6 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
-	if %%a EQU 7 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-	if %%a EQU 8 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-	if %%a EQU 9 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-	if %%a EQU 10 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-	if %%a EQU 11 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
-	if %%a EQU 12 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 1 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 2 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 3 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 4 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 5 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 6 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
+    if %%a EQU 7 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 8 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 9 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 10 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 11 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
+    if %%a EQU 12 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
     if %%a EQU 13 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
     if %%a EQU 14 (echo %R%[32m  !Count!%R%[90m-%R%[36m !LA2! %R%[0m)
     if %%a EQU 15 (echo %R%[32m  !Count!%R%[90m-%R%[37m !LA2! %R%[0m)
@@ -454,8 +454,8 @@ Dism /Get-Mountedwiminfo | Findstr /i "%Konum%\Mount" > NUL 2>&1
     if !errorlevel! EQU 0 (Call :Error_Window 9)
     if !errorlevel! NEQ 0 (RD /S /Q "%Konum%\Mount" > NUL 2>&1
                            MD "%Konum%\Mount" > NUL 2>&1
-						   set Mount=%Konum%\Mount
-						  )
+                           set Mount=%Konum%\Mount
+                          )
 FOR /F "tokens=*" %%g in ('reg query "HKLM" ^| Findstr "OFF_"') do (reg unload "%%g" > NUL 2>&1)
 cls&Call :Dil A 2 Menu_6_&echo %R%[91m► !LA2! %R%[0m
 echo.&Call :Install_Road
@@ -686,71 +686,71 @@ FOR /F "tokens=3" %%a in ('Dism /Get-WimInfo /WimFile:!MainWim! /Index:!BootInde
 cls&Call :Dil A 2 Menu_13_&echo %R%[91m !LA2! %R%[0m
 echo.&Call :Dil A 2 D0011&set /p Value=►%R%[32m !LA2!%R%[90m [%R%[96m Y %R%[90m/%R%[96m N %R%[90m]: %R%[0m
 Call :Upper Value !Value!
-	if !Value! EQU Y (echo.
-	                  FOR /L %%g in (1,1,4) do (
-					      FOR /F "delims=> tokens=2" %%k in ('Findstr /i "SS_%%g_" %Lang% 2^>NUL') do (
-						      echo %R%[36m   %%g-%R%[33m %%k %R%[0m
-					      )
-					  )
-					  Call :Dil A 2 D0016&set /p Value2=►%R%[32m !LA2!: %R%[0m
-					      if !Value2! GTR 4 (set Value2=4)
-					  dir /b "%Konum%\Bin\SetupFiles.zip" > NUL 2>&1
-					      if !errorlevel! NEQ 0 (set Link=https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/Files/SetupFiles.zip
-					                             Call :PSDownload "%Konum%\Bin\SetupFiles.zip"
-						                        )
-					  %NSudo% Powershell -command "Expand-Archive -Force '%Konum%\Bin\SetupFiles.zip' '%Mount%'"
-					  Call :RegeditInstall
-					  Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "Location" REG_SZ !Value2!
-					  Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "UseLargeIcons" REG_SZ 1
-					  Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "UseLargeMenus" REG_SZ 1
-					  Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "AlwaysOnTop" REG_SZ 1
-					  Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "AutoHide" REG_SZ 0
-					  Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "Center" REG_SZ 1
-					  Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "Buttons" REG_SZ "Power.lnk;setup.exe.lnk;Explorer++.lnk;Start Menu.lnk;"
-					  FOR /F "tokens=*" %%g in ('reg query "HKLM" ^| Findstr "OFF_"') do (reg unload "%%g" > NUL 2>&1)
+    if !Value! EQU Y (echo.
+                      FOR /L %%g in (1,1,4) do (
+                          FOR /F "delims=> tokens=2" %%k in ('Findstr /i "SS_%%g_" %Lang% 2^>NUL') do (
+                              echo %R%[36m   %%g-%R%[33m %%k %R%[0m
+                          )
+                      )
+                      Call :Dil A 2 D0016&set /p Value2=►%R%[32m !LA2!: %R%[0m
+                          if !Value2! GTR 4 (set Value2=4)
+                      dir /b "%Konum%\Bin\SetupFiles.zip" > NUL 2>&1
+                          if !errorlevel! NEQ 0 (set Link=https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/Files/SetupFiles.zip
+                                                 Call :PSDownload "%Konum%\Bin\SetupFiles.zip"
+                                                )
+                      %NSudo% Powershell -command "Expand-Archive -Force '%Konum%\Bin\SetupFiles.zip' '%Mount%'"
+                      Call :RegeditInstall
+                      Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "Location" REG_SZ !Value2!
+                      Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "UseLargeIcons" REG_SZ 1
+                      Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "UseLargeMenus" REG_SZ 1
+                      Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "AlwaysOnTop" REG_SZ 1
+                      Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "AutoHide" REG_SZ 0
+                      Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "Center" REG_SZ 1
+                      Call :RegAdd "HKLM\OFF_HKU\SOFTWARE\Peter Lerup\LaunchBar" "Buttons" REG_SZ "Power.lnk;setup.exe.lnk;Explorer++.lnk;Start Menu.lnk;"
+                      FOR /F "tokens=*" %%g in ('reg query "HKLM" ^| Findstr "OFF_"') do (reg unload "%%g" > NUL 2>&1)
 )
 echo.&Call :Dil A 2 D0012&set /p Value=►%R%[32m !LA2!%R%[90m [%R%[96m Y %R%[90m/%R%[96m N %R%[90m]: %R%[0m
 Call :Upper Value !Value!
-	if !Value! EQU Y (Call :RegeditInstall
-					  Call :RegAdd "HKLM\OFF_SYSTEM\Setup\MoSetup" "AllowUpgradesWithUnsupportedTPMOrCPU" REG_DWORD "1"
-					  Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassRAMCheck" REG_DWORD "1"
-					  Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassSecureBootCheck" REG_DWORD "1"
-					  Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassTPMCheck" REG_DWORD "1"
-					  Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassStorageCheck" REG_DWORD "1"
-					  Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassCPUCheck" REG_DWORD "1"
-					  FOR /F "tokens=*" %%g in ('reg query "HKLM" ^| Findstr "OFF_"') do (reg unload "%%g" > NUL 2>&1)
+    if !Value! EQU Y (Call :RegeditInstall
+                      Call :RegAdd "HKLM\OFF_SYSTEM\Setup\MoSetup" "AllowUpgradesWithUnsupportedTPMOrCPU" REG_DWORD "1"
+                      Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassRAMCheck" REG_DWORD "1"
+                      Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassSecureBootCheck" REG_DWORD "1"
+                      Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassTPMCheck" REG_DWORD "1"
+                      Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassStorageCheck" REG_DWORD "1"
+                      Call :RegAdd "HKLM\OFF_SYSTEM\Setup\LabConfig" "BypassCPUCheck" REG_DWORD "1"
+                      FOR /F "tokens=*" %%g in ('reg query "HKLM" ^| Findstr "OFF_"') do (reg unload "%%g" > NUL 2>&1)
 )
 set Error_Control=1
 FOR %%g in (background.bmp spwizimg.dll setup.bmp) do (
-	dir /b "%Konum%\Boot\%%g" > NUL 2>&1
-		if !errorlevel! EQU 0 (set Error_Control=0)
+    dir /b "%Konum%\Boot\%%g" > NUL 2>&1
+        if !errorlevel! EQU 0 (set Error_Control=0)
 )
 if !Error_Control! EQU 0 (echo.&Call :Dil A 2 D0013&set /p Value=►%R%[32m !LA2!%R%[90m [%R%[96m Y %R%[90m/%R%[96m N %R%[90m]: %R%[0m
                           Call :Upper Value !Value!
-	                          if !Value! EQU Y (%NSudo% Copy /y "%Konum%\Boot\background.bmp" "%Mount%\sources"
-					                            %NSudo% Copy /y "%Konum%\Boot\spwizimg.dll" "%Mount%\sources"
-					                            %NSudo% Copy /y "%Konum%\Boot\setup.bmp" "%Mount%\Windows\System32"
+                              if !Value! EQU Y (%NSudo% Copy /y "%Konum%\Boot\background.bmp" "%Mount%\sources"
+                                                %NSudo% Copy /y "%Konum%\Boot\spwizimg.dll" "%Mount%\sources"
+                                                %NSudo% Copy /y "%Konum%\Boot\setup.bmp" "%Mount%\Windows\System32"
                                                )
 )
 set Error_Control=
 echo.&Call :Dil A 2 D0014&set /p Value=►%R%[32m !LA2!%R%[90m [%R%[96m Y %R%[90m/%R%[96m N %R%[90m]: %R%[0m
 Call :Upper Value !Value!
-	if !Value! EQU Y (dir /b "%Konum%\Bin\VMD.zip" > NUL 2>&1
-					      if !errorlevel! NEQ 0 (set Link=https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/Files/VMD.zip
-						                         Call :PSDownload "%Konum%\Bin\VMD.zip"
-						                        )
-					  Call :Powershell "Expand-Archive -Force '%Konum%\Bin\VMD.zip' '%Konum%\Bin\VMD'"
-					  Dism /Image:%Mount% /Add-Driver /Driver:%Konum%\Bin\VMD /Recurse
-					  RD /S /Q "%Konum%\Bin\VMD" > NUL 2>&1
+    if !Value! EQU Y (dir /b "%Konum%\Bin\VMD.zip" > NUL 2>&1
+                          if !errorlevel! NEQ 0 (set Link=https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/Files/VMD.zip
+                                                 Call :PSDownload "%Konum%\Bin\VMD.zip"
+                                                )
+                      Call :Powershell "Expand-Archive -Force '%Konum%\Bin\VMD.zip' '%Konum%\Bin\VMD'"
+                      Dism /Image:%Mount% /Add-Driver /Driver:%Konum%\Bin\VMD /Recurse
+                      RD /S /Q "%Konum%\Bin\VMD" > NUL 2>&1
 )
 echo.&Call :Dil A 2 D0015&set /p Value=►%R%[32m !LA2!%R%[90m [%R%[96m Y %R%[90m/%R%[96m N %R%[90m]: %R%[0m
 Call :Upper Value !Value!
-	if !Value! EQU Y (Dism /Unmount-Image /MountDir:"%Mount%" /commit
+    if !Value! EQU Y (Dism /Unmount-Image /MountDir:"%Mount%" /commit
                           if !errorlevel! NEQ 0 (cls&Call :Dil A 2 Y0019&echo %R%[31m !LA2! %R%[0m
                                                  Call :Powershell "Dismount-WindowsImage -Path '%Mount%' -Save"
                                                 )
-					 )
-	if !Value! NEQ Y (set Mount_Road=GO)
+                     )
+    if !Value! NEQ Y (set Mount_Road=GO)
 goto :eof
 
 REM ██████████████████████████████████████████████████████████████████
@@ -876,22 +876,22 @@ goto :eof
 REM ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 :RegKey
 Reg add "%~1" /f > NUL 2>&1
-	if !errorlevel! NEQ 0 (%NSudo% Reg add "%~1" /f)
+    if !errorlevel! NEQ 0 (%NSudo% Reg add "%~1" /f)
 goto :eof
 
 :RegAdd
 Reg add "%~1" /v "%~2" /t "%~3" /d "%~4" /f > NUL 2>&1
-	if !errorlevel! EQU 1 (%NSudo% Reg add "%~1" /f /v "%~2" /t "%~3" /d "%~4")
+    if !errorlevel! EQU 1 (%NSudo% Reg add "%~1" /f /v "%~2" /t "%~3" /d "%~4")
 goto :eof
 
 :RegVeAdd
 Reg add "%~1" /ve /t "%~2" /d "%~3" /f > NUL 2>&1
-	if !errorlevel! EQU 1 (%NSudo% Reg add "%~1" /f /ve /t "%~2" /d "%~3")
+    if !errorlevel! EQU 1 (%NSudo% Reg add "%~1" /f /ve /t "%~2" /d "%~3")
 goto :eof
 
 :RegDel
 Reg delete %* /f > NUL 2>&1
-	if !errorlevel! EQU 1 (%NSudo% Reg delete %* /f)
+    if !errorlevel! EQU 1 (%NSudo% Reg delete %* /f)
 goto :eof
 
 REM -------------------------------------------------------------
@@ -1067,8 +1067,8 @@ echo !MainWim! | Findstr /i "boot.wim" > NUL 2>&1
     if !errorlevel! NEQ 0 (dir /b /s !MainWim!\*boot.wim > NUL 2>&1
                                if !errorlevel! NEQ 0 (set Error=!Error!,8)
                                if !errorlevel! EQU 0 (FOR /F "tokens=*" %%g in ('dir /b /s "!MainWim!\*boot.wim" 2^>NUL') do (Call :NailAdd BootWim "%%g")
-							                          Call :Boot_Index&Call :WimFile !BootWim!
-													 )
+                                                      Call :Boot_Index&Call :WimFile !BootWim!
+                                                     )
 )
 REM Verilen yol install.wim'in mi onu kontrol ediyorum.
 echo !MainWim! | Findstr /i "install.wim" > NUL 2>&1
@@ -1076,8 +1076,8 @@ echo !MainWim! | Findstr /i "install.wim" > NUL 2>&1
     if !errorlevel! NEQ 0 (dir /b /s !MainWim!\*install.wim > NUL 2>&1
                                if !errorlevel! EQU 0 (set Error=!Error!,11
                                                       FOR /F "tokens=*" %%g in ('dir /b /s "!MainWim!\*install.wim" 2^>NUL') do (Call :NailAdd MainWim "%%g"&Call :WimFile "%%g")
-													  goto :eof
-													 )
+                                                      goto :eof
+                                                     )
                                if !errorlevel! NEQ 0 (set Error=!Error!,7)
 )
 REM Verilen yol install.esd'nin yolu mu onu kontrol ediyorum.
@@ -1096,10 +1096,10 @@ echo !MainWim! | Findstr /i "install.esd" > NUL 2>&1
                                                       set Error=!N_Error!
                                                       set N_Error=
                                                       FOR /F "tokens=*" %%g in ('dir /b /s "!MainWim!\*install.esd" 2^>NUL') do (Call :NailAdd MainWim "%%g"&Call :WimFile "%%g")
-													 )
+                                                     )
                                if !errorlevel! NEQ 0 (echo !Error! | Findstr /i "7" > NUL 2>&1
                                                       if !errorlevel! NEQ 0 (set Error=!Error!,77)
-													 )
+                                                     )
 )
 goto :eof
 
@@ -1195,7 +1195,7 @@ Call :Regedit_Turn2 "\[HKCU" "[HKEY_CURRENT_USER"
 Call :Regedit_Turn2 "\[HKU" "[HKEY_USER"
 REM Masaüstü dosyalarını ayarlar
 FOR /F "tokens=*" %%a in ('dir /b /s "%Konum%\.Desktop-AfterSetup\*" 2^>NUL') do (set DirKontrol=%%a)
-	if "!DirKontrol!" NEQ "" (Call :Powershell "Compress-Archive -Path '%Konum%\.Desktop-AfterSetup\*' -DestinationPath '%Mount%\EasyDism_OgnitorenKs\Desktop.zip'")
+    if "!DirKontrol!" NEQ "" (Call :Powershell "Compress-Archive -Path '%Konum%\.Desktop-AfterSetup\*' -DestinationPath '%Mount%\EasyDism_OgnitorenKs\Desktop.zip'")
 )
 REM
 Call :RegeditInstall
