@@ -19,7 +19,7 @@
 :OgnitorenKs.Builder
 echo off
 chcp 65001 > NUL 2>&1
-title  EasyDism 4.3 │ OgnitorenKs
+title  EasyDism 4.4 │ OgnitorenKs
 setlocal enabledelayedexpansion
 cls
 
@@ -114,17 +114,16 @@ FOR /L %%a in (1,1,15) do (
     if %%a EQU 4 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
     if %%a EQU 5 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
     if %%a EQU 6 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
-    if %%a EQU 7 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-    if %%a EQU 8 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-    if %%a EQU 9 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-    if %%a EQU 10 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
+    if %%a EQU 7 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
+    if %%a EQU 8 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
+    if %%a EQU 9 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
+    if %%a EQU 10 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
     if %%a EQU 11 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
     if %%a EQU 12 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
     if %%a EQU 13 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
-    if %%a EQU 14 (echo %R%[32m  !Count!%R%[90m-%R%[36m !LA2! %R%[0m)
-    if %%a EQU 15 (echo %R%[32m  !Count!%R%[90m-%R%[37m !LA2! %R%[0m)
+    if %%a EQU 14 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
+    if %%a EQU 15 (echo %R%[32m  !Count!%R%[90m-%R%[90m !LA2! %R%[0m)
 )
-echo.
 Call :Dil A 2 D0001&set /p Menu=►%R%[92m !LA2!: %R%[0m
     if !Menu! EQU 1 (Call :Imaj_WimReader)
     if !Menu! EQU 2 (Call :Imaj_WIM2ESD)

@@ -5,16 +5,20 @@
 -   Site: [https://ognitorenks.blospot.com](https://ognitorenks.blospot.com)
 
 
-<details><B><summary> Versiyon 4.3 ► 02.05.2025 </B></summary>
+<details><B><summary> Versiyon 4.4 ► 08.05.2025 </B></summary>
+
+    • Ana menü teması düzenlendi.
+
+</details><details><B><summary> Versiyon 4.3 ► 02.05.2025 </B></summary>
 
     • NSudo hatası giderildi.
 
-<details><B><summary> Versiyon 4.2 ► 19.06.2024 </B></summary>
+</details><details><B><summary> Versiyon 4.2 ► 19.06.2024 </B></summary>
 
     • İmaj mount işlemi sonrası test için ekleyip unuttuğum 'pause' komutu kaldırıldı.
     • "Format sonrası ilk açılışa batch script ekle" bölümündeki tüm hatalar giderildi. Sorunsuz bir şekilde çalışması sağlandı.
 
-<details><B><summary> Versiyon 4.1 ► 25.05.2024</B></summary>
+</details><details><B><summary> Versiyon 4.1 ► 25.05.2024</B></summary>
 
     • "OgnitorenKs_Reader" başlığında nizami görüntü için kodlar düzenlendi.
     • "Hepsi bir arada Windows Hazırla [AIO]" bölümüne farklı mimari sürümlerin x86 üzerinde birleştirilmesiyle ilgili uyarı mesajı eklendi.
