@@ -85,11 +85,13 @@ It allows you to install updates into the mounted image. Put the update files yo
 
 </details><details><B><summary> 10 - Add batch script to first boot after format</B></summary>
 
-A script file is added to the mounted image that will run on the first boot of the system. In this script file you can add the script files you want to run on first boot.
-- You can add .bat .cmd .cmd .vbs .vbs .ps1 script files to this section. Open the directory where EasyDism is installed and put the files in the ".Script-AfterSetup" folder.
-- You can add an unattended program and install it on first boot. Open the directory where EasyDism is installed and put the files in the ".Script-AfterSetup" folder. Add only unattended programs.
-- You can add .reg files that need to be applied on first boot. Open the directory where EasyDism is installed and put the files in the ".Script-AfterSetup" folder.
-- You can add files to the desktop. Open the directory where EasyDism is installed and put the files in the ".Desktop-AfterSetup" folder. It will not add empty folders. It will add to the desktop as "EasyDism_OgnitorenKs" folder.
+Add the script that will run on the first boot of the system into the mounted image. After making your additions according to the instructions below, you can run the “Add batch script to the first boot after format” section and add it to the Mount.
+- ".Desktop-AfterSetup"= Put the files and folders you want to be added to the desktop in this directory. At the first startup, it will put them on the desktop in the “EasyDism_OgnitorenKs” folder.
+- ".Script-AfterSetup"= You can put your “.bat .cmd .vbs .vbs .ps1 .reg” files that you want to be applied on system startup in this directory.
+- ".Script-AfterSetup\Unattended"= You can put unattended programs that you want to be loaded at system startup in this directory.
+- ".Script-AfterSetup\Normal"= You can put the programs you want to be installed at system startup in this directory. However, this section is for programs installed with the silent installation parameter. Also, after putting the programs in the folder, you need to process them in the "Setup.txt" file. The content of the "Setup.txt" file should be prepared with the following template.
+- EasyDism_Setup_1_>Name of the program>Program.exe>Participation-free installation parameter>
+- EasyDism_Setup_2_>7-Zip>7-Zip.exe>/S>
 
 </details><details><B><summary> 11 - Mount Image [UnMount]</B></summary>
 
@@ -129,5 +131,10 @@ In this section, if you have an image that you have previously mounted, you can 
 At startup, the default system language is automatically selected. You can use this section if you want to change it.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/15.png)
+
+</details><details><B><summary> 16 - Reset Application</B></summary>
+
+It deletes and recreates the folders that the program opens on startup. That is, “Regedit, Output, Driver, Boot, Update, Bin\Logs, .Script-AfterSetup\Normal, .Script-AfterSetup\Unattended, .Desktop-AfterSetup” folders are deleted and recreated. If there is an image installed in the Mount folder, it will uninstall, delete and recreate it. The purpose of creating this section is to prevent a file forgotten in a directory from corrupting the work while performing consecutive operations.
+
 
 </details>

@@ -14,9 +14,10 @@ Menu_9_>Install update>
 Menu_10_>Add batch script to first boot after format>
 Menu_11_>UnMount Image>
 Menu_12_>Prepare ISO>
-Menu_13_>Edit Windows Setup>
+Menu_13_>Edit Windows Setup [Boot.wim]>
 Menu_14_>Mount define path>
 Menu_15_>EasyDism change language>
+Menu_16_>Reset Application>
 ::███████████████████████████████████████████████████████████████████
 D0001>Process>
 D0002>Multiprocess>
@@ -50,7 +51,7 @@ Y0012>Installing drivers>
 Y0013>Installed Mount directories>
 Y0014>No installed mount directory found>
 Y0015>Main menu>
-Y0016>About Mount>
+Y0016>About the installed image [Mount]>
 Y0017>loading>
 Y0018>Collecting mount folder / Preparing image>
 Y0019>Dism command gives an error, so collection is done via Powershell>
@@ -65,6 +66,9 @@ Y0027>Configuring initial boot processes after format>
 Y0028>Image is being cleaned up>
 Y0029>ESD compression in progress>
 Y0030>When you want to combine x64 and x86 versions, overwrite the x86 version>
+Y0031>For operations 7,8,9,10 the mount directory must be defined/installed.>
+Y0032>If the Mount directory is installed, you can define it with operation 14.>
+Y0033>You can use operation 6 to mount the image file.>
 ::███████████████████████████████████████████████████████████████████
 Error_0_>Warning>
 Error_1_>ERROR ► Turkish character detected in folder/file path>

@@ -16,10 +16,10 @@
 ::  •    Site: https://ognitorenks.blogspot.com
 ::
 :: ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-:OgnitorenKs.Builder
+:EasyDism_OgnitorenKs
 echo off
 chcp 65001 > NUL 2>&1
-title  EasyDism 4.4 │ OgnitorenKs
+title  EasyDism 4.5 │ OgnitorenKs
 setlocal enabledelayedexpansion
 cls
 
@@ -66,29 +66,11 @@ Call :Error_Character "%Konum%"
     
 REM -------------------------------------------------------------
 REM Lazım olan klasörleri oluşturur
-FOR %%a in (Regedit Output Driver Boot Update Bin\Logs .Script-AfterSetup .Desktop-AfterSetup) do (
+FOR %%a in (Regedit Output Driver Boot Update Bin\Logs .Script-AfterSetup\Normal .Script-AfterSetup\Unattended .Desktop-AfterSetup) do (
     MD "%Konum%\%%a" > NUL 2>&1
 )
-
-REM -------------------------------------------------------------
-REM Yüklü mount yollarını alır ve remount işlemi yapar. Bunun uygulanması olası hataları önlemektedir.
-Call :Dil A 2 Y0023&echo.&echo %R%[92m !LA2! %R%[0m
-Dism /Get-Mountedwiminfo > %Konum%\Bin\Logs\MountInfo.txt
-FOR /F "delims=':' tokens=3" %%a in ('Find "Mount Dir" %Konum%\Bin\Logs\MountInfo.txt 2^>NUL') do (
-    FOR /F "skip=2 delims=':' tokens=2" %%b in ('Find "Mount Dir" %Konum%\Bin\Logs\MountInfo.txt 2^>NUL') do (
-        echo %%b | Findstr /i "?" > NUL 2>&1
-            if !errorlevel! EQU 0 (FOR /F "delims='\\?\' tokens=2" %%c in ('echo %%b ^>NUL') do (
-                                       set C=%%c
-                                       set C=!C:~1!
-                                       Dism /Remount-Image /MountDir:"!C!:%%a" > NUL 2>&1
-                                      )
-                                  )
-            if !errorlevel! NEQ 0 (set B=%%b
-                                   set B=!B:~1!
-                                   Dism /Remount-Image /MountDir:"!B!:%%a" > NUL 2>&1
-                                  )
-    )
-)
+dir /b "%Konum%\.Script-AfterSetup\Normal\Setup.txt" > NUL 2>&1
+    if !errorlevel! NEQ 0 (echo. > %Konum%\.Script-AfterSetup\Normal\Setup.txt)
 
 REM ██████████████████████████████████████████████████████████████████
 :Menu
@@ -100,11 +82,13 @@ if "!Mount_Road!" EQU "GO" (mode con cols=130 lines=30
                             REM Call :Dil A 2 Prepared_By_&Call :Dil B 3 Prepared_By_&echo %R%[90m !LB3!:%R%[96m  !LA2! %R%[0m
                             Call :Menu_Reader
                            )
-echo.
-Call :Dil A 2 Y0020&echo %R%[91m► EasyDism !LA2! %R%[0m
-echo.
+Call :Dil A 2 Y0020&echo %R%[91m ▼ EasyDism !LA2! %R%[0m
+if "!Mount_Road!" EQU "NT" (Call :Dil A 2 Y0031&echo %R%[90m • !LA2! %R%[0m
+                            Call :Dil A 2 Y0032&echo %R%[90m • !LA2! %R%[0m
+                            Call :Dil A 2 Y0033&echo %R%[90m • !LA2! %R%[0m
+)
 set Count=0
-FOR /L %%a in (1,1,15) do (
+FOR /L %%a in (1,1,16) do (
     Call :Dil A 2 Menu_%%a_
     set /a Count+=1
     if %%a LSS 10 (set Count= !Count!)
@@ -114,15 +98,17 @@ FOR /L %%a in (1,1,15) do (
     if %%a EQU 4 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
     if %%a EQU 5 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
     if %%a EQU 6 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
-    if %%a EQU 7 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
-    if %%a EQU 8 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
-    if %%a EQU 9 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
-    if %%a EQU 10 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
+    if "!Mount_Road!" EQU "GO" (if %%a EQU 7 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
+                                if %%a EQU 8 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
+                                if %%a EQU 9 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
+                                if %%a EQU 10 (echo %R%[32m  !Count!%R%[90m»%R%[36m !LA2! %R%[0m)
+                               )
     if %%a EQU 11 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
     if %%a EQU 12 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
     if %%a EQU 13 (echo %R%[32m  !Count!%R%[90m-%R%[33m !LA2! %R%[0m)
     if %%a EQU 14 (echo %R%[32m  !Count!%R%[90m-%R%[93m !LA2! %R%[0m)
     if %%a EQU 15 (echo %R%[32m  !Count!%R%[90m-%R%[90m !LA2! %R%[0m)
+    if %%a EQU 16 (echo %R%[32m  !Count!%R%[90m-%R%[90m !LA2! %R%[0m)
 )
 Call :Dil A 2 D0001&set /p Menu=►%R%[92m !LA2!: %R%[0m
     if !Menu! EQU 1 (Call :Imaj_WimReader)
@@ -131,15 +117,24 @@ Call :Dil A 2 D0001&set /p Menu=►%R%[92m !LA2!: %R%[0m
     if !Menu! EQU 4 (Call :Imaj_Index_Export)
     if !Menu! EQU 5 (Call :Imaj_AIO_Maker)
     if !Menu! EQU 6 (Call :Imaj_WimMount)
-    if !Menu! EQU 7 (Call :Mount_Driver_Install)
-    if !Menu! EQU 8 (Call :Mount_Regedit_Install)
-    if !Menu! EQU 9 (Call :Mount_Update_Install)
-    if !Menu! EQU 10 (Call :AfterSetup)
+    if "!Mount_Road!" EQU "GO" (if !Menu! EQU 7 (Call :Mount_Driver_Install)
+                                if !Menu! EQU 8 (Call :Mount_Regedit_Install)
+                                if !Menu! EQU 9 (Call :Mount_Update_Install)
+                                if !Menu! EQU 10 (Call :AfterSetup)
+                               )
     if !Menu! EQU 11 (Call :Mount_UnMount)
     if !Menu! EQU 12 (Call :Imaj_ISO_Maker)
     if !Menu! EQU 13 (Call :Win_Setup)
     if !Menu! EQU 14 (Call :Mount_Reader)
     if !Menu! EQU 15 (Call :Language_Select)
+    if !Menu! EQU 16 (if "!Mount_Road!" EQU "GO" (Dism /Unmount-Image /MountDir:"%Mount%" /commit
+                                                      if !errorlevel! NEQ 0 (Call :Powershell "Dismount-WindowsImage -Path '%Mount%' -Save")
+                                                 )
+                      FOR %%a in (Regedit Output Driver Boot Update Bin\Logs .Script-AfterSetup .Desktop-AfterSetup) do (RD /S /Q "%Konum%\%%a" > NUL 2>&1)
+                      FOR %%a in (Regedit Output Driver Boot Update Bin\Logs .Script-AfterSetup\Normal .Script-AfterSetup\Unattended .Desktop-AfterSetup) do (MD "%Konum%\%%a" > NUL 2>&1)
+                      echo. > %Konum%\.Script-AfterSetup\Normal\Setup.txt
+                      goto EasyDism_OgnitorenKs
+                     )
     if !Error! EQU X (goto Menu)
 Call :ProcessCompleted
 goto Menu
@@ -755,16 +750,15 @@ goto :eof
 REM ██████████████████████████████████████████████████████████████████
 :____HANGAR____
 :Menu_Reader
-Call :Dil A 2 Y0016&echo %R%[35m► !LA2! %R%[0m
-echo.
-echo %R%[90m►   Mount =%R%[36m %Mount% %R%[0m
-echo %R%[90m►   Image =%R%[36m %MainWim:~1,-1% %R%[90m│%R%[36m %index%%R%[0m
+Call :Dil A 2 Y0016&echo %R%[91m ▼ !LA2! %R%[0m
+echo %R%[90m •   Mount=%R%[36m %Mount% %R%[0m
+echo %R%[90m •   Image=%R%[36m %MainWim:~1,-1% %R%[90m│%R%[36m %index%%R%[0m
 FOR /F "tokens=3" %%a in ('Dism /Get-WimInfo /WimFile:!MainWim! /Index:%index% ^| FIND "Architecture"') do (
     FOR /F "skip=1 delims=. tokens=3" %%b in ('Dism /Get-WimInfo /WimFile:!MainWim! /Index:%index% ^| Find "Version"') do (
         FOR /F "tokens=4" %%c in ('Dism /Get-WimInfo /WimFile:!MainWim! /Index:%index% ^| Find "Build"') do (
             FOR /F "tokens=2 delims=':'" %%d in ('Dism /Get-WimInfo /WimFile:!MainWim! /Index:%index% ^| findstr /C:Name') do (
-                echo %R%[90m►  System =%R%[36m%%d %R%[90m│%R%[36m %%a%R%[0m
-                echo %R%[90m► Version =%R%[36m %%b.%%c%R%[0m
+                echo %R%[90m •  System=%R%[36m%%d %R%[90m│%R%[36m %%a%R%[0m
+                echo %R%[90m • Version=%R%[36m %%b.%%c%R%[0m
             )
         )
     )
@@ -845,8 +839,8 @@ FOR /L %%z in (1,1,!Countt!) do (
         FOR /F "delims=> tokens=2" %%k in ('Findstr /i "=Wim_%%z_" %Konum%\Bin\Logs\wiminfo.txt 2^>NUL') do (
             FOR /F "delims=> tokens=2" %%j in ('Findstr /i "=Index_%%z_" %Konum%\Bin\Logs\wiminfo.txt 2^>NUL') do (
                 set /a Count+=1
-                echo  %R%[32m !Count!-%R%[36m %%g %R%[0m
-                echo  %R%[90m ►  %%k [%%j] %R%[0m
+                echo  %R%[32m !Count!┬%R%[36m %%g %R%[0m
+                echo  %R%[32m  └%R%[90m Image: "%%k" │ Index: %%j %R%[0m
             )
         )
     )
@@ -870,6 +864,7 @@ echo !MainWim! | Findstr /i "install.wim" > NUL 2>&1
     if !errorlevel! EQU 0 (set WimFile=%MainWim:~1,-21%)
 echo !MainWim! | Findstr /i "boot.wim" > NUL 2>&1
     if !errorlevel! EQU 0 (set WimFile=%MainWim:~1,-18%)
+Dism /Remount-Image /MountDir:"!Mount!" > NUL 2>&1
 goto :eof
 
 REM ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -1155,7 +1150,7 @@ REM ■■■■■■■■■■■■■■■■■■■■■■■■■�
 :Language_Select
 cls
 DEL /F /Q /A %Konum%\Bing\Logs\Dil > NUL 2>&1
-Call :Dil A 2 Menu_14_&echo.&echo %R%[91m !LA2! %R%[0m&echo.
+Call :Dil A 2 Menu_15_&echo.&echo %R%[91m !LA2! %R%[0m&echo.
 set Count=0
 FOR /F "delims=. tokens=1" %%g in ('dir /b "%Konum%\Bin\Language\*.cmd" 2^>NUL') do (
     set /a Count+=1
@@ -1180,13 +1175,18 @@ Call :Mount_Check
     if !Hata! EQU 1 (Call :Error_Window 12&goto :eof)
 Call :Dil A 2 Y0027&cls&echo.&echo %R%[92m !LA2! %R%[0m
 RD /S /Q "%Mount%\EasyDism_OgnitorenKs" > NUL 2>&1
-MD "%Mount%\EasyDism_OgnitorenKs\Setup" > NUL 2>&1
+MD "%Mount%\EasyDism_OgnitorenKs\Setup\Unattended" > NUL 2>&1
+MD "%Mount%\EasyDism_OgnitorenKs\Setup\Normal" > NUL 2>&1
 Copy /y "%Konum%\Bin\NSudo.exe" "%Mount%\EasyDism_OgnitorenKs" > NUL 2>&1
-FOR %%g in (bat cmd vbs ps1 exe reg) do (
+Copy /y "%Konum%\Bin\7z.dll" "%Mount%\EasyDism_OgnitorenKs" > NUL 2>&1
+Copy /y "%Konum%\Bin\7z.exe" "%Mount%\EasyDism_OgnitorenKs" > NUL 2>&1
+FOR %%g in (bat cmd vbs ps1 reg) do (
     FOR /F "tokens=*" %%k in ('dir /b /s %Konum%\.Script-AfterSetup\*.%%g 2^>NUL') do (
         Copy /y "%%k" "%Mount%\EasyDism_OgnitorenKs\Setup" > NUL 2>&1
     )
 )
+xcopy /s /e /h /y "%Konum%\.Script-AfterSetup\Normal" "%Mount%\EasyDism_OgnitorenKs\Setup\Normal" > NUL 2>&1
+xcopy /s /e /h /y "%Konum%\.Script-AfterSetup\Unattended" "%Mount%\EasyDism_OgnitorenKs\Setup\Unattended" > NUL 2>&1
 REM Reg dosyaları içindeki yollar kısaltılınca kayıt işlemi yapılmadığından kısaltılmış bölümleri kontrol edip. Normal şekilde düzenliyorum
 Call :Regedit_Turn2 "\[HKLM" "[HKEY_LOCAL_MACHINE"
 Call :Regedit_Turn2 "\[HKCR" "[HKEY_CLASSES_ROOT"
@@ -1194,7 +1194,8 @@ Call :Regedit_Turn2 "\[HKCU" "[HKEY_CURRENT_USER"
 Call :Regedit_Turn2 "\[HKU" "[HKEY_USER"
 REM Masaüstü dosyalarını ayarlar
 FOR /F "tokens=*" %%a in ('dir /b /s "%Konum%\.Desktop-AfterSetup\*" 2^>NUL') do (set DirKontrol=%%a)
-    if "!DirKontrol!" NEQ "" (Call :Powershell "Compress-Archive -Path '%Konum%\.Desktop-AfterSetup\*' -DestinationPath '%Mount%\EasyDism_OgnitorenKs\Desktop.zip'")
+    if "!DirKontrol!" NEQ "" ("!Konum!\Bin\7z.exe" a -tzip "%Mount%\EasyDism_OgnitorenKs\Desktop.zip" "%Konum%\.Desktop-AfterSetup\*" -aoa > NUL 2>&1)
+    
 )
 REM
 Call :RegeditInstall
@@ -1224,7 +1225,6 @@ echo ::  ► Hazırlayan: Hüseyin UZUNYAYLA / OgnitorenKs
 echo ::
 echo ::  ► İletişim - Contact;
 echo ::  --------------------------------------
-echo ::  • Discord: https://discord.gg/7hbzSGTYeZ
 echo ::  •    Site: https://ognitorenks.blogspot.com/
 echo ::
 echo :: ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -1244,57 +1244,60 @@ echo    if %%errorlevel%% NEQ 0 ^(Call :Powershell "Start-Process '%%Konum%%\Eas
 echo.
 echo Call :Powershell "Set-ExecutionPolicy Unrestricted"
 echo REM ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-echo cls^&echo %%R%%[33m !LA2!... %%R%%[0m
+echo cls
 echo dir /b "%%Konum%%\Desktop.zip" ^> NUL 2^>^&1
-echo     if %%errorlevel%% EQU 0 ^(Call :Powershell "Expand-Archive -Force '%%Konum%%\Desktop.zip' 'C:\Users\%%username%%\Desktop\EasyDism_OgnitorenKs'"^)
-echo DEL /F /Q /A "%%Konum%%\Desktop.zip" ^> NUL 2^>^&1
+echo     if %%errorlevel%% EQU 0 ^(echo ►%%R%%[33m !LA2!... %%R%%[0m
+echo                               "%%Konum%%\7z.exe" x "%%Konum%%\Desktop.zip" -o"C:\Users\%%username%%\Desktop\EasyDism_OgnitorenKs" -y ^> NUL 2^>^&1
+echo                             ^)
 echo.
-echo cls^&echo %%R%%[33m !LB2! %%R%%[0m
+echo cls^&echo ►%%R%%[36m !LB2! %%R%%[0m
 echo FOR /F "tokens=*" %%%%a in ^('dir /b /s "%%Konum%%\Setup\*.cmd" 2^^^>NUL'^) do ^(
-echo     echo %%R%%[37m "%%%%~nxa" !LB3!... %%R%%[0m
+echo     Call :Echo_Print •%%R%%[33m "%%%%~nxa" !LB3!... %%R%%[0m
 echo     "%%Konum%%\NSudo.exe" -U:C -P:E -Wait cmd /c "%%%%a"
 echo ^)
 echo FOR /F "tokens=*" %%%%a in ^('dir /b /s "%%Konum%%\Setup\*.bat" 2^^^>NUL'^) do ^(
-echo     echo %%R%%[37m "%%%%~nxa" !LB3!... %%R%%[0m
+echo     Call :Echo_Print •%%R%%[33m "%%%%~nxa" !LB3!... %%R%%[0m
 echo     "%%Konum%%\NSudo.exe" -U:C -P:E -Wait cmd /c "%%%%a"
 echo ^)
 echo FOR /F "tokens=*" %%%%a in ^('dir /b /s "%%Konum%%\Setup\*.ps1" 2^^^>NUL'^) do ^(
-echo    echo %%R%%[37m "%%%%~nxa" !LB3!... %%R%%[0m
+echo    Call :Echo_Print •%%R%%[33m "%%%%~nxa" !LB3!... %%R%%[0m
 echo    "%%Konum%%\NSudo.exe" -U:C -P:E -Wait Powershell -file "%%%%a"
 echo ^)
 echo FOR /F "tokens=*" %%%%a in ^('dir /b /s "%%Konum%%\Setup\*.vbs" 2^^^>NUL'^) do ^(
-echo    echo %%R%%[37m "%%%%~nxa" !LB3!... %%R%%[0m
+echo    Call :Echo_Print •%%R%%[33m "%%%%~nxa" !LB3!... %%R%%[0m
 echo    "%%Konum%%\NSudo.exe" -U:C -P:E -Wait cmd /c cscript "%%%%a"
 echo ^)
-echo cls^&echo %%R%%[33m !LC2! %%R%%[0m
+echo cls^&echo ►%%R%%[36m !LC2! %%R%%[0m
 echo FOR /F %%%%a in ^('dir /b /s "%%Konum%%\Setup\*.reg" 2^^^>NUL'^) do ^(
-echo    echo %%R%%[37m "%%%%~nxa" !LC3!
+echo    Call :Echo_Print •%%R%%[33m "%%%%~nxa" !LC3! %%R%%[0m
 echo    regedit /s "%%%%a"
 echo ^)
-echo cls^&echo %%R%%[33m !LD2! !LD3!... %%R%%[0m
-echo FOR /F "tokens=*" %%%%a in ^('dir /b /s "%%Konum%%\Setup\*.exe" 2^^^>NUL'^) do ^(
-echo    echo %%R%%[37m "%%%%~na" !LD3!
-echo    "%%%%a" ^> NUL 2^>^&1
+echo cls^&echo ►%%R%%[36m !LD2! !LD3!... %%R%%[0m
+echo FOR /F "tokens=*" %%%%a in ^('dir /b /s "%%Konum%%\Setup\Unattended\*.exe" 2^^^>NUL'^) do ^(
+echo    Call :Echo_Print •%%R%%[33m "%%%%~na" !LD3! %%R%%[0m
+echo    "%%%%a"
+echo ^)
+echo set Count=0
+echo FOR /F %%%%a in ^('Findstr /i "EasyDism_Setup_" %%Konum%%\Setup\Normal\Setup.txt 2^^^>NUL'^) do ^(set /a Count+=1^)
+echo set /a Count-=1
+echo FOR /L %%%%a in ^(1,1,%%Count%%^) do ^(
+echo     FOR /F "delims=> tokens=2" %%%%b in ^('Findstr /i "EasyDism_Setup_%%%%a_" %%Konum%%\Setup\Normal\Setup.txt 2^^^>NUL'^) do ^(
+echo         FOR /F "delims=> tokens=3" %%%%c in ^('Findstr /i "EasyDism_Setup_%%%%a_" %%Konum%%\Setup\Normal\Setup.txt 2^^^>NUL'^) do ^(
+echo             FOR /F "delims=> tokens=4" %%%%d in ^('Findstr /i "EasyDism_Setup_%%%%a_" %%Konum%%\Setup\Normal\Setup.txt 2^^^>NUL'^) do ^(
+echo                 Call :Echo_Print •%%R%%[90m [%%%%a/%%Count%%]-%%R%%[33m "%%%%b" !LD3! %%R%%[0m
+echo                 "%%Konum%%\Setup\Normal\%%%%c" %%%%d
+echo             ^)
+echo         ^)
+echo     ^)
 echo ^)
 echo REM ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 echo Call :Powershell "Set-ExecutionPolicy restricted"
-echo cls^&echo.^&echo %%R%%[92m !LE2! %%R%%[0m
+echo cls^&echo.^&echo ►%%R%%[92m !LE2! %%R%%[0m
 echo.
-echo ^(
-echo echo echo off
-echo echo cls
-echo echo reg query "HKU\S-1-5-19" ^^^> NUL 2^^^>^^^&1
-echo echo     if %%%%errorlevel%%%% NEQ 0 ^^^(Powershell -Command "Start-Process '%%%%AppData%%%%\EasyDismClear.cmd' -Verb Runas"^^^&exit^^^)
-echo echo RD /S /Q "%%Konum%%" ^^^> NUL 2^^^>^^^&1
-echo echo reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "EasyDism_OgnitorenKs" /f ^^^> NUL 2^^^>^^^&1
-echo echo reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "EasyDism_OgnitorenKs_Clear" /f ^^^> NUL 2^^^>^^^&1
-echo echo DEL /F /Q /A "%%%%AppData%%%%\EasyDismClear.cmd" ^^^> NUL 2^^^>^^^&1
-echo echo exit
-echo ^) ^> %%AppData%%\EasyDismClear.cmd
-echo.
+echo reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v "EasyDism_OgnitorenKs_Delete" /t REG_SZ /d "cmd /c RD /S /Q C:\EasyDism_OgnitorenKs" /f ^> NUL 2^>^&1
 echo reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "EasyDism_OgnitorenKs" /f ^> NUL 2^>^&1
-echo reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "EasyDism_OgnitorenKs_Clear" /t REG_SZ /d "%%AppData%%\EasyDismClear.cmd" /f ^> NUL 2^>^&1
 echo shutdown -r -f -t 4
+echo RD /S /Q "C:\EasyDism_OgnitorenKs" ^> NUL 2^>^&1
 echo timeout /t 3 /nobreak ^> NUL
 echo exit
 echo REM ■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
@@ -1302,6 +1305,10 @@ echo :Powershell
 echo chcp 437 ^> NUL 2^>^&1
 echo Powershell -C %%*
 echo chcp 65001 ^> NUL 2^>^&1
+echo goto :eof
+echo.
+echo :Echo_Print
+echo echo %%*
 echo goto :eof
 ) > %Mount%\EasyDism_OgnitorenKs\EasyDism.cmd
 goto :eof

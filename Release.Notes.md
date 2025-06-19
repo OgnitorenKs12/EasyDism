@@ -5,9 +5,23 @@
 -   Site: [https://ognitorenks.blospot.com](https://ognitorenks.blospot.com)
 
 
-<details><B><summary> Versiyon 4.4 ► 08.05.2025 </B></summary>
+<details><B><summary> Versiyon 4.5 ► 19.06.2025 </B></summary>
 
-    • Ana menü teması düzenlendi.
+    • Menüdeki 7,8,9,10 numaralı işlemler 6 ve 14 numaralı işlemler ile alakalı olduğundan gizli hale getirildi. İşlem yapmak için öncelikle mount tanımlaması yapmak gerekiyor. Bunun için Menü üst bölümüne bilgi notları eklendi.
+    • EasyDism açılışındaki sistemdeki mount dizinlerinin hepsini remount etme işlemi iptal edildi. Seçilen mount dizinine özel remout işlemi eklendi.
+    • "Mount yol tanımla" bölümündeki imaj bilgi bölümü düzenlendi.
+    • Dil dosyasına eklenenler; "Y0031", "Y0032", "Y0033"
+    • Dil dosyasında değiştirilenler; "Y0016"
+    • "Format sonrası ilk açılışa script ekle" bölümünde düzenlemeler yapıldı. 
+        • Renklendirme komutlarındaki hatalar giderildi.
+        • Katılımsız programlar için ayrı bir klasör dizini oluşturuldu. [Setup\Unattended]
+        • Sessiz kurulum parametreleriyle kurulumu sağlanan programlar için ayrı bir klasör oluşturuldu. [Setup\Normal]
+        • Masaüstüne çıkartılan dosya ve klasör isimlerinde Türkçe harflerin bozulmaması için çalışmaya 7-Zip eklendi.
+    
+    
+</details><details><B><summary> Versiyon 4.4 ► 08.05.2025 </B></summary>
+
+    • Menü teması düzenlendi.
 
 </details><details><B><summary> Versiyon 4.3 ► 02.05.2025 </B></summary>
 

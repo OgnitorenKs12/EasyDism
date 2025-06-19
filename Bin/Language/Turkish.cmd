@@ -14,9 +14,10 @@ Menu_9_>Güncelleme yükle>
 Menu_10_>Format sonrası ilk açılışa batch script ekle>
 Menu_11_>İmaj topla [UnMount]>
 Menu_12_>ISO hazırla>
-Menu_13_>Windows Setup düzenle>
+Menu_13_>Windows Setup düzenle [Boot.wim]>
 Menu_14_>Mount yol tanımla>
 Menu_15_>EasyDism dil değiştir>
+Menu_16_>Uygulamayı Sıfırla>
 ::███████████████████████████████████████████████████████████████████
 D0001>İşlem>
 D0002>Çoklu İşlem>
@@ -50,7 +51,7 @@ Y0012>Sürücüler yükleniyor>
 Y0013>Yüklü Mount dizinleri>
 Y0014>Yüklü mount dizini bulunamadı>
 Y0015>Ana menü>
-Y0016>Mount Hakkında>
+Y0016>Yüklü imaj hakkında [Mount]>
 Y0017>yükleniyor>
 Y0018>Mount klasörü toplanıyor / İmaj hazırlanıyor>
 Y0019>Dism komutu hata verdiği için Powershell üzerinden toplama işlemi yapılıyor>
@@ -65,6 +66,9 @@ Y0027>Format sonrası ilk açılış işlemleri yapılandırılıyor>
 Y0028>Güncelleme artıkları temizleniyor>
 Y0029>ESD sıkıştırma işlemi yapılıyor>
 Y0030>x64 ve x86 sürümleri birleştirmek istediğinizde x86 sürümün üzerine ekleme yapınız>
+Y0031>7,8,9,10 numaralı işlemler için mount dizini tanımlanmalı/yüklenmeli.>
+Y0032>Mount dizini yüklü ise 14 numaralı işlem ile tanımlayabilirsiniz.>
+Y0033>İmaj dosyasını mount etmek için 6 numaralı işlemi kullanabilirsiniz.>
 ::███████████████████████████████████████████████████████████████████
 Error_0_>UYARI>
 Error_1_>HATA ► Klasör/Dosya yolunda Türkçe karakter tespit edildi>

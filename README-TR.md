@@ -76,7 +76,7 @@ Dizine çıkarılmış imajlara sürücü yüklemenizi sağlar. Eklemek istediğ
 
 </details><details><B><summary> 8 - Regedit kayıtlarını yükle</B></summary>
 
-İmaj içine regedit kayıtlarını entegre etmenizi sağlar. Yüklemek istediğiniz '.reg' dosyalarını EasyDism uygulamasının yüklü dizininde 'Regedit' klasörü içine atınız. Daha sonra bu bölümü çalıştırıp entegre işlemini başlatabilirsiniz. Bu kadar gelişmiş regedit kayıt entegrasyonunu başka bir uygulamada bulamazsınız.
+İmaj içine regedit kayıtlarını entegre etmenizi sağlar. Yüklemek istediğiniz '.reg' dosyalarını EasyDism uygulamasının yüklü dizininde 'Regedit' klasörü içine atınız. Daha sonra bu bölümü çalıştırıp entegre işlemini başlatabilirsiniz. Bu bölümde yapacağınız eklemeler sistemin açılmamasına neden olabilir. Bu program kaynaklı bir durum değildir. Eklediğiniz regedit kayıtlarından kaynaklanmaktadır.
 
 </details><details><B><summary> 9 - Güncelleme yükle</B></summary>
 
@@ -84,11 +84,13 @@ Mount edilmiş imaj içine güncelleme yükleme imkanı sağlar. Yüklemek isted
 
 </details><details><B><summary> 10 - Format sonrası ilk açılışa batch script ekle</B></summary>
 
-Mount edilmiş imaj içine sistem ilk açılışında çalışacak komut dosyası eklenir. Bu komut dosyası içine ilk açılışta çalışmasını istediğiniz script dosyalarını atabilirsiniz.
-- Bu bölüme .bat .cmd .vbs .ps1 script dosyalarını atabilirsiniz. EasyDism yüklü olduğu dizini açıp ".Script-AfterSetup" klasörü içerisine dosyaları atın.
-- Katılımsız program ekleyip ilk açılışta yükleme işlemini yapabilirsiniz. EasyDism yüklü olduğu dizini açıp ".Script-AfterSetup" klasörü içerisine dosyaları atın. Yalnızca katılımsız programları ekleyin.
-- İlk açılışta uygulanması gereken .reg dosyalarını ekleyebilirsiniz. EasyDism yüklü olduğu dizini açıp ".Script-AfterSetup" klasörü içerisine dosyaları atın.
-- Masaüstüne dosya ekleyebilirsiniz. EasyDism yüklü olduğu dizini açıp ".Desktop-AfterSetup" klasörü içerisine dosyaları atın. Boş klasörleri eklemeyecektir. Masaüstüne "EasyDism_OgnitorenKs" klasörü olarak ekleme yapacaktır.
+Mount edilmiş imaj içine sistem ilk açılışında çalışacak komut dosyası eklenir. Aşağıdaki yönlendirmelere göre eklemelerinizi yaptıktan sonra "Format sonrası ilk açılışa batch script ekle" bölümünü çalıştırıp Mount içerisine ekleme işlemini gerçekleştirebilirsiniz.
+- ".Desktop-AfterSetup"= Masaüstüne eklenmesini istediğinz dosya ve klasörleri bu dizine atınız. İlk açılışta masaüstüne "EasyDism_OgnitorenKs" klasörüne atacaktır.
+- ".Script-AfterSetup"= Sistem ilk açılışında uygulanmasını istediğiniz ".bat .cmd .vbs .ps1 .reg" dosyalarınızı bu dizine atabilirsiniz.
+- ".Script-AfterSetup\Unattended"= Sistem ilk açılışında yüklenmesini istediğiniz katılımsız programları bu dizine atabilirsiniz.
+- ".Script-AfterSetup\Normal"= Sistem ilk açılışında yüklenmesini istediğiniz programları bu dizine atabilirsiniz. Ancak bu bölüm sessiz kurulum parametresiyle yüklenen programları içindir. Ayrıca programları klasör içerisine attıktan sonra "Setup.txt" dosyasına işlemeniz gerekiyor. "Setup.txt" dosyasın içeriği aşağıdaki şablon ile hazırlanmalı.
+- EasyDism_Setup_1_>Programın adı>Program.exe>Katılımsız kurulum parametresi>
+- EasyDism_Setup_2_>7-Zip>7-Zip.exe>/S>
 
 </details><details><B><summary> 11 - İmaj topla [UnMount]</B></summary>
 
@@ -128,5 +130,10 @@ Bu bölümde daha önceden mount ettiğiniz bir imaj varsa onu seçip tanımlad�
 Açılışta varsayılan sistem diline göre otomatik seçim yapılmaktadır. Değiştirmek isterseniz bu bölümü kullanabilirsiniz.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/15.png)
+
+
+</details><details><B><summary> 16 - Uygulamayı Sıfırla</B></summary>
+
+Programın ilk açılışta açtığı klasörleri silip yeniden oluşturur. Yani "Regedit, Output, Driver, Boot, Update, Bin\Logs, .Script-AfterSetup\Normal, .Script-AfterSetup\Unattended, .Desktop-AfterSetup" klasörleri silinip yeniden oluşturulur. Mount klasöründe yüklenmiş imaj varsa onu kaldırıp silip yeniden oluşturacaktır. Bu bölümün oluşturulma amacı üst üste işlem yaparken herhangi bir dizinde unutulan bir dosyanın çalışmayı bozmasını engellemektir.
 
 </details>
