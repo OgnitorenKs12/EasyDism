@@ -15,14 +15,14 @@
 - EasyDism Windows 10 - 11 sürümlerinin x64 mimarilerinde çalışmaktadır.
 - Windows ekran ölçeklendirme ayarı Toolbox'ın pencere ayarını bozabilir.
 
-<details><B><summary> 1 - WIM │ ESD okuyucu</B></summary>
+<details><summary><B> 1 - WIM │ ESD okuyucu</B></summary>
 
 Bu bölümde 'install.wim', 'instal.esd' ve 'boot.wim' dosyasının içeriğini görüntülüyebilirsiniz.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/1.1.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/1.2.png)
 
-</details><details><B><summary> 2 - WIM ► ESD dönüştür</B></summary>
+</details><details><summary><B> 2 - WIM ► ESD dönüştür</B></summary>
 
 - install.wim dosyasını install.esd dosyasına dönüştürebilirsiniz. 
 - Esd dönüştürme işlemi install.wim dosyasını oldukça sıkıştırıp boyutunu düşürecektir.
@@ -31,7 +31,7 @@ Bu bölümde 'install.wim', 'instal.esd' ve 'boot.wim' dosyasının içeriğini 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/2.2.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/2.3.png)
 
-</details><details><B><summary> 3 - ESD ► WIM dönüştür</B></summary>
+</details><details><summary><B> 3 - ESD ► WIM dönüştür</B></summary>
 
 - install.esd dosyasını install.wim'e dönüştürebilirsiniz.
 - install.esd dosyaları üzerinde yeniden işlem yapmak için öncelikle install.wim'e dönüştürülmelidir.
@@ -40,7 +40,7 @@ Bu bölümde 'install.wim', 'instal.esd' ve 'boot.wim' dosyasının içeriğini 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/3.2.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/3.3.png)
 
-</details><details><B><summary> 4 - İndex çıkart</B></summary>
+</details><details><summary><B> 4 - İndex çıkart</B></summary>
 
 Bu bölümü aynı zamanda index silici olarak kullanabilirsiniz. Çünkü index silme işlemi install.wim içerisinde çöp dosyaları temizlemediği için boyutta azalma olmaz. Ancak 'index çıkarıcı' yeni oluşturacağı install dosyasına çöp dosyaları almayacağı için öncesinde düzenleme yaptıysanız boyutta azalma olacaktır.
 
@@ -53,7 +53,7 @@ Bu bölümde daha önceden çıkarma yaptıysanız ve dosyalarınızı EasyDism 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/4.4.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/4.5.png)
 
-</details><details><B><summary> 5 - Hepsi bir arada Windows Hazırla [AIO]</B></summary>
+</details><details><summary><B> 5 - Hepsi bir arada Windows Hazırla [AIO]</B></summary>
 
 Farklı Windows sürümlerini tek bir ISO'da toplamanıza imkan tanır. Yani Windows 10 ve Windows 11 sürümlerinin birlikte olduğu tek bir install.wim dosyası oluşturmanıza imkan verir.
 
@@ -61,7 +61,7 @@ Farklı Windows sürümlerini tek bir ISO'da toplamanıza imkan tanır. Yani Win
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/5.2.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/5.3.png)
 
-</details><details><B><summary> 6 - İmaj yükle [Mount]</B></summary>
+</details><details><summary><B> 6 - İmaj yükle [Mount]</B></summary>
 
 İmaj dosyasını dizine çıkarmanızı sağlar. Birden fazla imajı çıkaramazsınız. İmaj tanımlandıktan sonra ana menüye içeriği hakkında bilgileri yazar.
 
@@ -70,19 +70,19 @@ Farklı Windows sürümlerini tek bir ISO'da toplamanıza imkan tanır. Yani Win
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/6.3.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/6.4.png)
 
-</details><details><B><summary> 7 - Sürücü yükle</B></summary>
+</details><details><summary><B> 7 - Sürücü yükle</B></summary>
 
 Dizine çıkarılmış imajlara sürücü yüklemenizi sağlar. Eklemek istediğiniz sürücüleri EasyDism uygulamasının yüklü dizininde 'Driver' klasörü içine atıp. Bu bölümü tuşlayıp çalıştırarak yükleme işlemini gerçekleştirebilirsiniz.
 
-</details><details><B><summary> 8 - Regedit kayıtlarını yükle</B></summary>
+</details><details><summary><B> 8 - Regedit kayıtlarını yükle</B></summary>
 
 İmaj içine regedit kayıtlarını entegre etmenizi sağlar. Yüklemek istediğiniz '.reg' dosyalarını EasyDism uygulamasının yüklü dizininde 'Regedit' klasörü içine atınız. Daha sonra bu bölümü çalıştırıp entegre işlemini başlatabilirsiniz. Bu bölümde yapacağınız eklemeler sistemin açılmamasına neden olabilir. Bu program kaynaklı bir durum değildir. Eklediğiniz regedit kayıtlarından kaynaklanmaktadır.
 
-</details><details><B><summary> 9 - Güncelleme yükle</B></summary>
+</details><details><summary><B> 9 - Güncelleme yükle</B></summary>
 
 Mount edilmiş imaj içine güncelleme yükleme imkanı sağlar. Yüklemek istediğiniz güncelleme dosyalarını EasyDism uygulamasının yüklü dizininde 'Update' klasörü için atınız. Daha sonra bu bölümü çalıştırıp yükleme işlemini gerçekleştirebilirsiniz. Bu bölüm işlem sonunda güncelleme çöp dosyalarını da temizleyecektir.
 
-</details><details><B><summary> 10 - Format sonrası ilk açılışa batch script ekle</B></summary>
+</details><details><summary><B> 10 - Format sonrası ilk açılışa batch script ekle</B></summary>
 
 Mount edilmiş imaj içine sistem ilk açılışında çalışacak komut dosyası eklenir. Aşağıdaki yönlendirmelere göre eklemelerinizi yaptıktan sonra "Format sonrası ilk açılışa batch script ekle" bölümünü çalıştırıp Mount içerisine ekleme işlemini gerçekleştirebilirsiniz.
 - ".Desktop-AfterSetup"= Masaüstüne eklenmesini istediğinz dosya ve klasörleri bu dizine atınız. İlk açılışta masaüstüne "EasyDism_OgnitorenKs" klasörüne atacaktır.
@@ -92,7 +92,7 @@ Mount edilmiş imaj içine sistem ilk açılışında çalışacak komut dosyas�
 - EasyDism_Setup_1_>Programın adı>Program.exe>Katılımsız kurulum parametresi>
 - EasyDism_Setup_2_>7-Zip>7-Zip.exe>/S>
 
-</details><details><B><summary> 11 - İmaj topla [UnMount]</B></summary>
+</details><details><summary><B> 11 - İmaj topla [UnMount]</B></summary>
 
 Mount edilmiş sistemi toplayıp install.wim haline getirir. Mount edilmiş imaj üzerinde yaptığınız düzenlemelerden sonra toplama işlemi sonrası install.wim'in boyutu düşeceğine artabiliyor. Bunun sebebi kaldırdığımız bileşenlerin çöp dosya olarak kalmasıdır. Bu bölüm mount edilen imajı toplarken indexleri önce ayrı dizine çıkarıp yeniden oluşturur. Böylece çöp dosyalar silindiği için boyutu da düşürecektir.
 
@@ -102,14 +102,14 @@ Mount edilmiş sistemi toplayıp install.wim haline getirir. Mount edilmiş imaj
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/10.2.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/10.3.png)
 
-</details><details><B><summary> 12 - ISO hazırla</B></summary>
+</details><details><summary><B> 12 - ISO hazırla</B></summary>
 
 UEFI ve Legacy BIOS kurulum için uygun ISO hazırlamanıza imkan tanır. ISO hazırlandıktan sonra oluşturulduğu klasör açılacaktır. Daha önceden yaptığınız işlemlerde unuttuğunuz aynı isimde ISO varsa öncesinde uyarı verecektir.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/11.1.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/11.2.png)
 
-</details><details><B><summary> 13 - Windows Setup düzenle</B></summary>
+</details><details><summary><B> 13 - Windows Setup düzenle</B></summary>
 
 Bu bölümde boot.wim dosyası içinde yer alan "Windows Setup" bölümü düzenlenir. Sırasıyla sorulacak işlemler;
 - "Lerup Launch bar ve programları eklensin mi?" ► Bu ayar ile kurulum ekranında başlat menüsü gibi işlevsel bir WinPE uygulaması ekliyoruz. Ayrıca içerisinde Explorer++, AOMEI Partition Assistan gibi yardımcı programlar yer almaktadır. İşlemi kabul ederseniz ilgili dosyaları github deposundan indirip boot.wim içerisine entegre edecektir.
@@ -118,21 +118,21 @@ Bu bölümde boot.wim dosyası içinde yer alan "Windows Setup" bölümü düzen
 - "VMD sürücüleri yüklensin mi?" ► Yeni nesil Laptop cihazlarda geliştirilen bu özellik için Windows içerisine eklenmiş entegre sürücü bulunmuyor bundan dolayı kurulum esnasında diskler görüntülenemiyor. Bu tarz bir sorun yaşamamak için sürücüleri boot.wim içerisine entegre eder. İşlemi kabul ederseniz Github deposundan ilgili sürücüleri indirip, yükleyecektir.
 - "Mount dizini toplansın mı?" ► işlemler tamamlandıktan sonra farklı bir düzenleme yapmayacaksanız değişiklikleri kaydedip mount dizinini toplamak istediğinizi soracaktır.
 
-</details><details><B><summary> 14 - Mount yol tanımla</B></summary>
+</details><details><summary><B> 14 - Mount yol tanımla</B></summary>
 
 Bu bölümde daha önceden mount ettiğiniz bir imaj varsa onu seçip tanımladıktan sonra EasyDism üzerinde işlem yapmanıza imkan tanır. Tanımlamadan sonra ana menüde imaj hakkında bilgiler yazılacaktır.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/10.1.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/6.4.png)
 
-</details><details><B><summary> 15 - EasyDism dil değiştirme</B></summary>
+</details><details><summary><B> 15 - EasyDism dil değiştirme</B></summary>
 
 Açılışta varsayılan sistem diline göre otomatik seçim yapılmaktadır. Değiştirmek isterseniz bu bölümü kullanabilirsiniz.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/TR-SS/15.png)
 
 
-</details><details><B><summary> 16 - Uygulamayı Sıfırla</B></summary>
+</details><details><summary><B> 16 - Uygulamayı Sıfırla</B></summary>
 
 Programın ilk açılışta açtığı klasörleri silip yeniden oluşturur. Yani "Regedit, Output, Driver, Boot, Update, Bin\Logs, .Script-AfterSetup\Normal, .Script-AfterSetup\Unattended, .Desktop-AfterSetup" klasörleri silinip yeniden oluşturulur. Mount klasöründe yüklenmiş imaj varsa onu kaldırıp silip yeniden oluşturacaktır. Bu bölümün oluşturulma amacı üst üste işlem yaparken herhangi bir dizinde unutulan bir dosyanın çalışmayı bozmasını engellemektir.
 

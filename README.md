@@ -16,14 +16,14 @@ All rights of the work belong to Hüseyin UZUNYAYLA. It is forbidden to develop,
 - EasyDism works on x64 architectures of Windows 10 - 11 versions.
 - Windows screen scaling setting may break Toolbox's window setting.
 
-<details><B><summary> 1 - WIM │ ESD Reader</B></summary>
+<details><summary><B> 1 - WIM │ ESD Reader</B></summary>
 
 In this section you can view the contents of 'install.wim', 'instal.esd' and 'boot.wim'.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/1.1.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/1.2.png)
 
-</details><details><B><summary> 2 - WIM ► Convert ESD</B></summary>
+</details><details><summary><B> 2 - WIM ► Convert ESD</B></summary>
 
 - You can convert install.wim to install.esd. 
 - Esd conversion will compress install.wim considerably and reduce its size.
@@ -32,7 +32,7 @@ In this section you can view the contents of 'install.wim', 'instal.esd' and 'bo
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/2.2.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/2.3.png)
 
-</details><details><B><summary> 3 - ESD ► Convert WIM</B></summary>
+</details><details><summary><B> 3 - ESD ► Convert WIM</B></summary>
 
 - You can convert install.esd to install.wim.
 - To reprocess install.esd files, they must first be converted to install.wim.
@@ -41,7 +41,7 @@ In this section you can view the contents of 'install.wim', 'instal.esd' and 'bo
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/3.2.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/3.3.png)
 
-</details><details><B><summary> 4 - Extract index</B></summary>
+</details><details><summary><B> 4 - Extract index</B></summary>
 
 You can also use this section as an index eraser. Because the index deletion does not clean the junk files in install.wim, the size will not decrease. However, the 'index extractor' will not include junk files in the newly created install file, so if you have edited it before, the size will decrease.
 
@@ -54,7 +54,7 @@ If you have already extracted in this section and you forgot to get your files f
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/4.4.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/4.5.png)
 
-</details><details><B><summary> 5 - Prepare All-in-one Windows [AIO]</B></summary>
+</details><details><summary><B> 5 - Prepare All-in-one Windows [AIO]</B></summary>
 
 It allows you to combine different versions of Windows into a single ISO. In other words, it allows you to create a single install.wim file with Windows 10 and Windows 11 versions together.
 
@@ -62,7 +62,7 @@ It allows you to combine different versions of Windows into a single ISO. In oth
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/5.2.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/5.3.png)
 
-</details><details><B><summary> 6 - Mount Image [Mount]</B></summary>
+</details><details><summary><B> 6 - Mount Image [Mount]</B></summary>
 
 Allows you to extract the image file to the directory. You cannot extract more than one image. Once the image is defined, it writes information about its contents to the main menu.
 
@@ -71,19 +71,19 @@ Allows you to extract the image file to the directory. You cannot extract more t
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/6.3.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/6.4.png)
 
-</details><details><B><summary> 7 - Install driver</B></summary>
+</details><details><summary><B> 7 - Install driver</B></summary>
 
 Allows you to install drivers to indexed images. You can add the drivers you want to add in the 'Driver' folder in the installed directory of EasyDism. You can perform the installation process by clicking and running this section.
 
-</details><details><B><summary> 8 - Load regedit</B></summary>
+</details><details><summary><B> 8 - Load regedit</B></summary>
 
 It allows you to integrate regedit records into the image. Put the '.reg' files you want to install into the 'Regedit' folder in the installed directory of EasyDism. You can then run this section and start the integration process. You will not find such advanced regedit registry integration in any other application.
 
-</details><details><B><summary> 9 - Install update</B></summary>
+</details><details><summary><B> 9 - Install update</B></summary>
 
 It allows you to install updates into the mounted image. Put the update files you want to install into the 'Update' folder in the installed directory of EasyDism. You can then run this partition and perform the installation process. This section will also clean up the update trash files at the end of the process.
 
-</details><details><B><summary> 10 - Add batch script to first boot after format</B></summary>
+</details><details><summary><B> 10 - Add batch script to first boot after format</B></summary>
 
 Add the script that will run on the first boot of the system into the mounted image. After making your additions according to the instructions below, you can run the “Add batch script to the first boot after format” section and add it to the Mount.
 - ".Desktop-AfterSetup"= Put the files and folders you want to be added to the desktop in this directory. At the first startup, it will put them on the desktop in the “EasyDism_OgnitorenKs” folder.
@@ -93,7 +93,7 @@ Add the script that will run on the first boot of the system into the mounted im
 - EasyDism_Setup_1_>Name of the program>Program.exe>Participation-free installation parameter>
 - EasyDism_Setup_2_>7-Zip>7-Zip.exe>/S>
 
-</details><details><B><summary> 11 - Mount Image [UnMount]</B></summary>
+</details><details><summary><B> 11 - Mount Image [UnMount]</B></summary>
 
 It collects the mounted system and turns it into install.wim. After you make edits to the mounted image, the size of install.wim may increase instead of decreasing. This is because the components we removed remain as garbage files. When this section collects the mounted image, it first extracts the indexes to a separate directory and then rebuilds them. This will reduce the size as the junk files are deleted.
 
@@ -103,14 +103,14 @@ It collects the mounted system and turns it into install.wim. After you make edi
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/10.2.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/10.3.png)
 
-</details><details><B><summary> 12 - Prepare ISO</B></summary>
+</details><details><summary><B> 12 - Prepare ISO</B></summary>
 
 It allows you to prepare a suitable ISO for UEFI and Legacy BIOS installation. After the ISO is prepared, the folder where it was created will open. If there is an ISO with the same name that you have forgotten in your previous operations, it will warn you beforehand.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/11.1.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/11.2.png)
 
-</details><details><B><summary> 13 - Windows Setup düzenle</B></summary>
+</details><details><summary><B> 13 - Windows Setup düzenle</B></summary>
 
 In this section, the “Windows Setup” section in the boot.wim file is edited. Here are the steps to be asked in order;
 - "Add Lerup Launch bar and programs?" ► With this setting we add a WinPE application that functions like a start menu on the installation screen. It also includes utilities such as Explorer++, AOMEI Partition Assistan. If you accept the action, it will download the relevant files from the github repository and integrate them into boot.wim.
@@ -119,20 +119,20 @@ In this section, the “Windows Setup” section in the boot.wim file is edited.
 - "Install VMD drivers?" ► There are no integrated drivers in Windows for this feature developed for the new generation of Laptop devices, so the disks cannot be displayed during installation. To avoid this kind of problem, it integrates the drivers into boot.wim. If you accept the process, it will download and install the relevant drivers from the Github repository.
 - "Collect mount directory?" ► will ask you if you want to save the changes and mount the mount directory if you are not going to make any other edits after the process is complete.
 
-</details><details><B><summary> 14 - Define mount path</B></summary>
+</details><details><summary><B> 14 - Define mount path</B></summary>
 
 In this section, if you have an image that you have previously mounted, you can select and define it and then you can operate on EasyDism. After the definition, the main menu will display information about the image.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/10.1.png)
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/6.4.png)
 
-</details><details><B><summary> 15 - EasyDism change language</B></summary>
+</details><details><summary><B> 15 - EasyDism change language</B></summary>
 
 At startup, the default system language is automatically selected. You can use this section if you want to change it.
 
 ![Tool0](https://raw.githubusercontent.com/OgnitorenKs12/EasyDism/main/.github/EN-SS/15.png)
 
-</details><details><B><summary> 16 - Reset Application</B></summary>
+</details><details><summary><B> 16 - Reset Application</B></summary>
 
 It deletes and recreates the folders that the program opens on startup. That is, “Regedit, Output, Driver, Boot, Update, Bin\Logs, .Script-AfterSetup\Normal, .Script-AfterSetup\Unattended, .Desktop-AfterSetup” folders are deleted and recreated. If there is an image installed in the Mount folder, it will uninstall, delete and recreate it. The purpose of creating this section is to prevent a file forgotten in a directory from corrupting the work while performing consecutive operations.
 
